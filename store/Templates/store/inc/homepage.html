@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0px;
+      padding: 0px;
+      font-family: 'Arial', sans-serif;
+      background-image: url('/static/images/back.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 80vh;
+      
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #001f3f; /* Dark blue color */
+      color: #fff; /* Text color */
+      padding: 7px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    /* Logo styles (adjust as needed) */
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #4caf50 50%, #0074cc 50%);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-right: 10px; /* Adjust spacing between logo and buttons */
+    }
+    h1 {
+      color: black;
+      text-align: center;
+      font-size: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+    div.container {
+      text-align: center;
+    }
+    ul.myul {
+      display: inline-block;
+      text-align: left;
+      font-size: 20px;
+      margin-top: 40px;
+      font-weight: 300px;
+    }
+
+    /* Button styles (adjust as needed) */
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-login {
+      background-color: yellow; /* Blue color for login button */
+      color: green;
+      border-radius: 15px;
+      text-transform: uppercase;
+    }
+
+    .btn-register {
+      background-color: #4caf50; /* Green color for register button */
+      color: #001f3f;
+      border-radius: 7px;
+      text-transform: uppercase;
+    }
+
+     /* Cards container styles */
+     .cards-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    /* Card styles */
+    .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    width: calc(40% - 20px);
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card-name {
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #0074cc;
+    }
+
+    .card-date {
+      margin-left: 10px;
+      color: #555;
+    }
+
+    .rating-stars {
+      color: #ffd700; /* Adjust star color as needed */
+    }
+
+    .table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table td, .table th {
+      border: none; /* Remove borders for all cells initially */
+      border-bottom: 1px solid #ddd; /* Add bottom border */
+      padding: 8px;
+      text-align: left;
+    }
+
+    .table th {
+      background-color: #f2f2f2;
+    }
+
+    /* Remove bottom border for all cells except the last one in each row */
+    .table tr:not(:last-child) td {
+      border-bottom: none;
+    }
+
+    .buy-sell-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .btn-buy, .btn-sell {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btn-buy {
+      background-color: #4caf50;
+      color: #fff;
+    }
+
+    .btn-sell {
+      background-color: #ff6347;
+      color: #fff;
+    }
+    .card2 {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+  }
+  .content {
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value as needed */
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .button {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .button.white1 {
+    background-color: white;
+    color: #001f3f;
+    padding: auto;
+    font-size: 22px;
+  }
+  .button.white {
+    background-color: white;
+    color: #001f3f;
+    padding: 10px 30px; 
+    font-size: 22px;
+  }
+  .button.blue {
+    background-color: blue;
+    width: calc(40vh - 30px);
+  }
+  .red-text {
+    color: red;
+  }
+
+  /* Media Queries */
+  @media (max-width: 600px) {
+    .card {
+      padding: 10px;
+    }
+    .button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+     /* Footer styles */
+     .footer {
+      background-color: #001f3f; /* Dark blue background color */
+      color: #fff; /* Text color */
+      padding: 20px;
+      text-align: center;
+    }
+
+    .footer h2 {
+      margin-bottom: 10px;
+      font-size: 24px; /* Adjust as needed */
+      font-weight: bold;
+    }
+
+    .footer-links,
+    .footer-contacts {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .footer-links,
+    .footer-contacts {
+      flex-direction: column; /* Set the direction to column */
+      align-items: center; /* Center items in the column */
+    }
+
+    .footer-links h4,
+    .footer-contacts h4 {
+      margin-bottom: 10px;
+    }
+
+    .footer-links a,
+    .footer-contacts p {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .footer .copyright {
+      font-size: 12px;
+    }
+    /* Responsive styles */
+    @media only screen and (max-width: 600px) {
+      .cards-container {
+        flex-direction: column;
+      }
+
+      .card {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+    /* Responsive styles */
+    @media only screen and (max-width: 220px) {
+  .navbar {
+    flex-direction: row; /* Change flex direction to column for small screens */
+    align-items: flex-end; /* Center items vertically */
+  }
+
+  .logo {
+    margin-bottom: 10px; /* Increase spacing between logo and buttons */
+  }
+
+  .btn {
+    margin: 5px 0; /* Keep margin on buttons */
+    font-size: 12px; /* Increase font size for better readability */
+    align-self: stretch; /* Make buttons take full width */
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar HTML -->
+  <div class="navbar">
+    <div class="logo">Fan<span style="color: #0074cc;">Z</span>one</div>
+    <div>
+      <a href="{% url 'login' %}" class="btn btn-login">Login</a>
+      <a href="{% url 'register' %}" class="btn btn-register">Register</a>
+  </div>
+  </div>
+  
+  <div class="section-one">
+    <h1>
+      Best Soccer Betting ODDS
+    </h1>
+    <div class="container">
+      <ul class="myul" style="list-style-type: square;">
+      <li style="color: black;">Home of the best and cheap odds.</li>
+      <li style="color: black;">Verified Tipsters with more than 88% accuracy</li>
+      <li style="color: black;">Dairy betting tips for diffrent tipsters</li>
+      <li style="color: black;">Register to become our Tipsters and earn online</li>
+      </ul>
+    </div>
+  </div>
+  <h1>Todays Tips</h1>
+  <!-- Cards Container -->
+  <div class="cards-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">JohntZ</div>
+        <div class="card-date">Feb 1</div>
+      </div>
+      <div class="rating-stars">
+        <!-- Using Font Awesome for stars -->
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star-half-alt"></i>
+      </div>
+      <table class="table">
+        <table class="table">
+          <tr>
+            <td>Al Jandal vs AlQaisoma</td>
+          </tr>
+          <tr>
+            <td>FCSB vs Farul Constanta</td>
+          </tr>
+        </table>
+      </table>
+      <div class="buy-sell-buttons">
+        <button class="btn btn-buy">Buy @300</button>
+        <button class="btn btn-sell">ODDS 4.13</button>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">PhanTom</div>
+        <div class="card-date">Feb 2</div>
+      </div>
+      <div class="rating-stars">
+        <!-- Using Font Awesome for stars -->
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <table class="table">
+        <!-- Your table content for Card 2 goes here -->
+      </table>
+      <div class="buy-sell-buttons">
+        <button class="btn btn-buy">Buy @400</button>
+        <button class="btn btn-sell">ODDS 6.17</button>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-name">JKim</div>
+        <div class="card-date">Feb 2</div>
+      </div>
+      <div class="rating-stars">
+        <!-- Using Font Awesome for stars -->
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <table class="table">
+        <!-- Your table content for Card 3 goes here -->
+      </table>
+      <div class="buy-sell-buttons">
+        <button class="btn btn-buy">Buy</button>
+        <button class="btn btn-sell">ODDS 7.18</button>
+      </div>
+    </div>
+  </div>
+  <div class="card2">
+    <div class="content" style="background-color: #555;">
+      <button class="button white1">GoldenPickOdds</button>
+      <div class="red-text">Dairy 7-10 sure betting tips</div>
+      <p>Get up to 96.5% daily accurate premium plan. 98% chances of winning.</p>
+      <div class="red-text">Today's Match Starts 5.30pm</div>
+      <div>
+        <button class="button blue">Buy Dairy @ 1200</button>
+        <button class="button blue">Buy Monthly @ 12500</button>
+      </div>
+    </div>
+  </div>
+  <div class="card2">
+    <div class="content" style="background-color: #555;">
+      <button class="button white">PrimePickOdds</button>
+      <div class="red-text">Dairy 3-5 sure bets tips</div>
+      <p>Get up to 94.5% daily accurate premium plan. 98% chances of winning.</p>
+      <div class="red-text">Today's Match Starts 5.30pm</div>
+      <div>
+        <button class="button blue">Buy Dairy @ 600</button>
+        <button class="button blue">Buy Monthly @ 800</button>
+      </div>
+    </div>
+  </div>
+   <!-- Footer -->
+   <div class="footer">
+    <h2>FanZone</h2>
+
+    <!-- Footer Links -->
+    <div class="footer-links">
+      <h4>Links</h4>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Privacy</a>
+    </div>
+
+    <!-- Footer Contacts -->
+    <div class="footer-contacts">
+      <h4>Contacts</h4>
+      <p>Contact us: example@email.com</p>
+      <p>Phone: +123456789</p>
+      <p>WhatsApp: +123456789</p>
+      <p>Call: +123456789</p>
+    </div>
+
+    <!-- Copyright -->
+    <p class="copyright">&copy; 2024 Your Company Name. All rights reserved.</p>
+  </div>
+</body>
+</html>
